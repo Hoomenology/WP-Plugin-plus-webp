@@ -84,6 +84,9 @@ class PlusWebp {
 
 		$mime_type = get_post_mime_type( $attachment_id );
 		if ( in_array( $mime_type, $pluswebp_settings['types'] ) ) {
+            // fix upload_dir changed
+            list( $this->upload_dir, $this->upload_url, $this->upload_path ) = $this->upload_dir_url_path();
+
 			$metadata_webp         = $metadata;
 			$file_webp             = $this->change_ext( $metadata['file'], 'webp', $pluswebp_settings['addext'] );
 			$metadata_webp['file'] = $file_webp;
