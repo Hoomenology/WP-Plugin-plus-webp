@@ -507,7 +507,7 @@ class PlusWebp {
 			return false;
 		}
 		if ( file_exists( $filename_webp ) ) {
-			return false;
+			return true;
 		}
 
 		$pluswebp_settings = get_option( 'pluswebp' );
